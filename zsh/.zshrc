@@ -84,3 +84,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tgcli="/home/yogaub/tools/tg/bin/telegram-cli"
+alias raspi="ssh gio@192.168.1.10"
