@@ -85,3 +85,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tgcli="$HOME/tools/tg/bin/telegram-cli"
 alias raspi="ssh gio@192.168.1.10"
+alias tmy="tmux attach -t yog || tmux new -s yog"
+alias tmd="tmux detach"
+alias ..="cd .."
