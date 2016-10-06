@@ -94,5 +94,6 @@ alias pomodoro="sleep 25m && mplayer ~/Music/pomodoro.mp3"
 alias c="clear"
 alias updateme="sudo apt update || sudo apt upgrade"
 alias feeds="newsbeuter -r"
+alias ccat="pygmentize -g"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
