@@ -96,5 +96,6 @@ alias updateme="sudo apt update; sudo apt upgrade"
 alias feeds="newsbeuter -r"
 alias ccat="pygmentize -g"
 alias ra="ranger"
+alias fuk="sudo $(fc -ln -1)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
