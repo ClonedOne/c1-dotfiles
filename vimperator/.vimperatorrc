@@ -3,3 +3,4 @@ nmap X :set apptab=false
 nmap i :history
 
 set statuslinevisibility=hidden
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
