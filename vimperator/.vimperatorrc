@@ -2,5 +2,6 @@ nmap x :set apptab=true
 nmap X :set apptab=false
 nmap i :history
 
-set statuslinevisibility=hidden
+" set statuslinevisibility=hidden
 set hintchars=hjklasdfgyuiopqwertnmzxcvb
+colorscheme indigo-fx3
