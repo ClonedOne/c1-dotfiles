@@ -96,5 +96,12 @@ alias updateme="sudo apt update; sudo apt upgrade"
 alias feeds="newsbeuter -r"
 alias ccat="pygmentize -g"
 alias ra="ranger"
+alias nanna="sudo pm-suspend"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
+  exec startx
+fi
+
+
