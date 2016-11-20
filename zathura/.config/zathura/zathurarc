@@ -13,3 +13,6 @@ set statusbar-fg "#839496"
 set statusbar-bg "#073642"
 set render-loading-fg "#839496"
 set render-loading-bg "#002b36"
+
+set selection-clipboard clipboard
+
