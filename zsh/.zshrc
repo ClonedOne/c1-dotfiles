@@ -97,6 +97,7 @@ alias feeds="newsbeuter -r"
 alias ccat="pygmentize -g"
 alias ra="ranger"
 alias nanna="sudo pm-suspend"
+alias poffy="$HOME/tools/spotifycli/sp.sh"
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
