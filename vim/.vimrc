@@ -13,6 +13,9 @@ Plugin 'VundleVim/Vundle.vim'
 " auto complete plugin
 Plugin 'Valloric/YouCompleteMe'
 
+" nerd tree plugin
+Plugin 'scrooloose/nerdtree'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -41,7 +44,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" set natural positon for splits
+" set natural position for splits
 set splitbelow
 set splitright
 
