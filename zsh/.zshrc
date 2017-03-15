@@ -39,6 +39,9 @@ ZSH_THEME="pure"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# Report CPU usage for commands running longer than x seconds
+REPORTTIME=1
+
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
@@ -98,11 +101,4 @@ alias ccat="pygmentize -g"
 alias ra="ranger"
 alias nanna="sudo pm-suspend"
 alias poffy="$HOME/tools/spotifycli/sp.sh"
-
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec startx
-fi
-
-
+alias t="python $HOME/tools/t/t.py --task-dir $HOME/tasks --list tasks"

@@ -4,8 +4,6 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -13,25 +11,35 @@ Plugin 'VundleVim/Vundle.vim'
 " auto complete plugin
 Plugin 'Valloric/YouCompleteMe'
 
-" nerd tree plugin
+" nerd tree plugin for directory navigation
 Plugin 'scrooloose/nerdtree'
+
+" command-t plugin for fuzzy finding of files
+Plugin 'wincent/command-t'
+
+" nerd commenter plugin for toggle comment function
+Plugin 'scrooloose/nerdcommenter'
+
+" vim-surround plugin to allow quick modification of parenthesis and quotes
+Plugin 'tpope/vim-surround'
+
+" vim-repeat plugin allow repetition of plugin provided functions with .
+Plugin 'tpope/vim-repeat'
+
+" vim-fugitive plugin to handle git version control
+Plugin 'tpope/vim-fugitive'
+
+" YankRing plugin to maintain history of yanks
+Plugin 'vim-scripts/YankRing.vim'
+
+" RainbowParenthesis plugin to highlight matching parenthesis
+Plugin 'vim-scripts/Rainbow-Parenthesis'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
 
 syntax on
 set encoding=utf-8
