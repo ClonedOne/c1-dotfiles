@@ -31,6 +31,7 @@ Plugin 'tpope/vim-fugitive'
 
 " YankRing plugin to maintain history of yanks
 Plugin 'vim-scripts/YankRing.vim'
+let g:yankring_history_dir = '/tmp/yankring'
 
 " RainbowParenthesis plugin to highlight matching parenthesis
 Plugin 'vim-scripts/Rainbow-Parenthesis'
