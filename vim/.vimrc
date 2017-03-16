@@ -14,11 +14,38 @@ Plugin 'Valloric/YouCompleteMe'
 " nerd tree plugin for directory navigation
 Plugin 'scrooloose/nerdtree'
 
-" command-t plugin for fuzzy finding of files
-Plugin 'wincent/command-t'
+" fuzzy file finder
+Plugin 'ctrlpvim/ctrlp.vim'
+" set ctrl-p working dir
+let g:ctrlp_working_path_mode = 'ra'
+" remap to ctrl-p
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" ignore file and dirs
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
 
 " nerd commenter plugin for toggle comment function
 Plugin 'scrooloose/nerdcommenter'
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
 
 " vim-surround plugin to allow quick modification of parenthesis and quotes
 Plugin 'tpope/vim-surround'
@@ -28,13 +55,6 @@ Plugin 'tpope/vim-repeat'
 
 " vim-fugitive plugin to handle git version control
 Plugin 'tpope/vim-fugitive'
-
-" YankRing plugin to maintain history of yanks
-Plugin 'vim-scripts/YankRing.vim'
-let g:yankring_history_dir = '/tmp/yankring'
-
-" RainbowParenthesis plugin to highlight matching parenthesis
-Plugin 'vim-scripts/Rainbow-Parenthesis'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -67,4 +87,8 @@ nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> ù :exe "vertical resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> à :exe "vertical resize " . (winheight(0) * 2/3)<CR>
+
+" avoiding escape
+:imap jk <Esc>
+:imap ii <Esc>
 
