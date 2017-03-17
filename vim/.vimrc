@@ -56,6 +56,10 @@ Plugin 'tpope/vim-repeat'
 " vim-fugitive plugin to handle git version control
 Plugin 'tpope/vim-fugitive'
 
+" auto generate ctags on save
+Plugin 'craigemery/vim-autotag'
+let g:autotagTagsFile="tags"
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
