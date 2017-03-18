@@ -96,3 +96,6 @@ nnoremap <silent> à :exe "vertical resize " . (winheight(0) * 2/3)<CR>
 :imap jk <Esc>
 :imap ii <Esc>
 
+" source the regex file
+source ~/.regexlist.vim
+
