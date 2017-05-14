@@ -39,4 +39,7 @@ https://www.gnu.org/software/stow/
        '. __/_    _.-'     /'
     jgs       `'-.._____.-'
 
+
+
+    sudo apt install git stow vim redshift-gtk albert papirus-icon-theme adapta-gtk-theme bear ubuntu-make texlive texstudio guake tmux unity-tweak-tool
  
