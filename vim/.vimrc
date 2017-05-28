@@ -24,7 +24,6 @@ let g:ctrlp_cmd = 'CtrlP'
 " ignore file and dirs
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
@@ -71,7 +70,7 @@ filetype plugin indent on    " required
 
 syntax on
 set encoding=utf-8
-set spell spelllang=en_us,it
+set spell spelllang=en_us
 vnoremap . :norm.<cr>
 
 " change split screen default movement
