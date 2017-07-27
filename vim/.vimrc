@@ -52,12 +52,45 @@ Plugin 'tpope/vim-surround'
 " vim-repeat plugin allow repetition of plugin provided functions with .
 Plugin 'tpope/vim-repeat'
 
+" vim-go plugin for go language support
+Plugin 'fatih/vim-go'
+
 " vim-fugitive plugin to handle git version control
 Plugin 'tpope/vim-fugitive'
 
-" auto generate ctags on save
-Plugin 'craigemery/vim-autotag'
-let g:autotagTagsFile="tags"
+" plugins for tag files management
+Plugin 'ludovicchabant/vim-gutentags'
+
+Plugin 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
+
 
 " GDB debugger front end
 Plugin 'vim-scripts/Conque-GDB'
@@ -70,7 +103,7 @@ filetype plugin indent on    " required
 
 syntax on
 set encoding=utf-8
-set spell spelllang=en_us
+autocmd FileType latex,tex,md,markdown setlocal spell
 vnoremap . :norm.<cr>
 
 " change split screen default movement
