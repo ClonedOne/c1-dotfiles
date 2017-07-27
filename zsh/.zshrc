@@ -13,6 +13,8 @@ source $ZSH/oh-my-zsh.sh
 # Exports
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
 
 
 # General aliases
