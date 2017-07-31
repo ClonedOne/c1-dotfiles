@@ -1,6 +1,14 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" set mouse mode
+set mouse=a
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -13,6 +21,7 @@ Plugin 'Valloric/YouCompleteMe'
 
 " nerd tree plugin for directory navigation
 Plugin 'scrooloose/nerdtree'
+map <C-n> :NERDTreeToggle<CR>
 
 " fuzzy file finder
 Plugin 'ctrlpvim/ctrlp.vim'
