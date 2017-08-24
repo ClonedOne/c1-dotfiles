@@ -80,12 +80,28 @@ Plugin 'vim-scripts/Conque-GDB'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Put your non-Plugin stuff after this line
+
+" Non-Plugin stuff after this line
 
 syntax on
 set encoding=utf-8
 autocmd FileType latex,tex,md,markdown setlocal spell
 vnoremap . :norm.<cr>
+
+" tab management
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+" code folding management
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
 
 " change split screen default movement
 nnoremap <C-J> <C-W><C-J>
