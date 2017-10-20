@@ -21,10 +21,7 @@
             \\
 
 
-This repo contains the configuration files I use in my linux machines. I will try to keep it as simple as possible and add only the bare minimum absolutely necessary to survive. ^_^
-
-The usage of GNU Stow is recommended.
-https://www.gnu.org/software/stow/
+This repository contains dotfiles in use with both linux and mac os devices. The repository is managed with yadm.
 
 
       `""==,,__  
@@ -41,5 +38,5 @@ https://www.gnu.org/software/stow/
 
 
 
-    sudo apt install git stow vim redshift-gtk albert papirus-icon-theme adapta-gtk-theme bear ubuntu-make texlive texstudio guake tmux unity-tweak-tool
+git stow vim redshift-gtk albert papirus-icon-theme adapta-gtk-theme bear ubuntu-make texlive texstudio guake tmux unity-tweak-tool
  
