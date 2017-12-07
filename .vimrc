@@ -77,8 +77,14 @@
     " GDB debugger front end
     Plugin 'vim-scripts/Conque-GDB'
 
+    " vim Airline
+    Plugin 'vim-airline/vim-airline'
+
     " colooaaarrzzzzz
     Plugin 'joshdick/onedark.vim'
+
+    " allow access to virtualenv packages
+    Plugin 'jmcantrell/vim-virtualenv'
 
 
 " All of your Plugins must be added before the following line
@@ -95,6 +101,8 @@ vnoremap . :norm.<cr>
 
 " colooooooorz
 colorscheme onedark
+let g:airline_theme='onedark'
+
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)

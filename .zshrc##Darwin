@@ -6,13 +6,15 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 REPORTTIME=1
 
-plugins=(git z catimg osx jsontools taskwarrior sudo zsh-syntax-highlighting)
+plugins=(git z virtualenvwrapper catimg osx jsontools taskwarrior sudo zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# Exports
+# Go related exports
 export GOPATH=$HOME/go
-export GOBIN=$HOME/go/bin
+export GOROOT=/usr/local/opt/go/libexec/bin
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 # General aliases
 alias tmy="tmux attach -t gio || tmux new -s gio"
@@ -32,3 +34,7 @@ alias pomodoro="sleep 25m && mplayer ~/Music/pomodoro.mp3"
 alias fmusic="firefox http://focusmusic.fm/"
 alias tgcli="$HOME/tools/tg/bin/telegram-cli"
 alias copy="xsel -ib"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
