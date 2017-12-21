@@ -64,6 +64,11 @@
     " vim-go plugin for go language support
     Plugin 'fatih/vim-go'
 
+    " plugin for LaTex support
+    Plugin 'lervag/vimtex'
+    " use Zathura for visualization
+    let g:vimtex_view_method = 'zathura'
+
     " vim-fugitive plugin to handle git version control
     Plugin 'tpope/vim-fugitive'
 
