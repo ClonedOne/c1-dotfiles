@@ -13,9 +13,7 @@ source $ZSH/oh-my-zsh.sh
 # Exports
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects
-export GOPATH=$HOME/go
-export GOBIN=$HOME/go/bin
-
+export PATH=$PATH:/usr/local/go/bin
 
 # General aliases
 alias tmy="tmux attach -t gio || tmux new -s gio"
@@ -35,3 +33,9 @@ alias pomodoro="sleep 25m && mplayer ~/Music/pomodoro.mp3"
 alias fmusic="firefox http://focusmusic.fm/"
 alias tgcli="$HOME/tools/tg/bin/telegram-cli"
 alias copy="xsel -ib"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+fi
