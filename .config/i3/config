@@ -179,5 +179,8 @@ for_window [class="^.*"] border pixel 2
 
 # scrot & gimp - root
 bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
-# # scrot & gimp - select window or rectangle
+# scrot & gimp - select window or rectangle
 bindsym Mod1+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
+
+# Lock screen
+bindsym Control+$mod+l exec i3lock
