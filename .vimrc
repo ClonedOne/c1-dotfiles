@@ -68,6 +68,7 @@
     Plugin 'lervag/vimtex'
     " use Zathura for visualization
     let g:vimtex_view_method = 'zathura'
+    let g:latex_view_general_viewer = 'zathura'
 
     " vim-fugitive plugin to handle git version control
     Plugin 'tpope/vim-fugitive'
