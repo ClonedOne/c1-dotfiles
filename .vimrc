@@ -69,6 +69,7 @@
     " use Zathura for visualization
     let g:vimtex_view_method = 'zathura'
     let g:latex_view_general_viewer = 'zathura'
+    let g:tex_flavor = 'latex'
 
     " vim-fugitive plugin to handle git version control
     Plugin 'tpope/vim-fugitive'
@@ -139,6 +140,9 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+
+" get backspace to work as expected
+set backspace=indent,eol,start
 
 " change split screen default movement
 nnoremap <C-J> <C-W><C-J>
