@@ -21,7 +21,7 @@
             \\
 
 
-This repository contains dotfiles in use with both linux and mac os devices. The repository is managed with yadm.
+This repository contains dotfiles in use on linux. The repository is managed with stow.
 
 
       `""==,,__  
@@ -38,5 +38,4 @@ This repository contains dotfiles in use with both linux and mac os devices. The
 
 
 
-git stow vim redshift-gtk albert papirus-icon-theme adapta-gtk-theme bear ubuntu-make texlive texstudio guake tmux unity-tweak-tool
  
