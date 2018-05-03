@@ -35,8 +35,9 @@ alias fmusic="firefox http://focusmusic.fm/"
 alias tgcli="$HOME/tools/tg/bin/telegram-cli"
 alias copy="xsel -ib"
 
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
+# Cuda stuff
+export PATH=/usr/local/cuda-9.0/bin${PATH:+${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}:+${LD_LIBRARY_PATH}

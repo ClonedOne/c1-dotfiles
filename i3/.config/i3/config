@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec tilix
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -162,7 +162,7 @@ exec --no-startup-id feh --bg-scale ~/Pictures/walls/land.jpg
 exec_always --no-startup-id ~/.config/i3/bar.sh &
 
 # Start compton for shadows and nice stuff
-# exec compton --config ~/.compton.conf
+exec compton 
 
 # Set window border to 1 pixel
 new_window 1pixel
@@ -172,10 +172,10 @@ exec --no-startup-id redshift-gtk
 
 # Gaps stuff
 gaps inner 10
-gaps outer 5
+gaps outer 10
 smart_gaps on
 smart_borders on
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 
 # scrot & gimp - root
 bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
