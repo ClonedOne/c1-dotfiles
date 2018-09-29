@@ -200,8 +200,10 @@ set incsearch     " show search matches as you type
 vmap Q gq
 nmap Q gqap
 
-
 " Move across single lines vertically
 nnoremap j gj
 nnoremap k gk
+
+" Auto-text wrap at 80 chars
+au BufRead,BufNewFile *.md setlocal textwidth=80
 

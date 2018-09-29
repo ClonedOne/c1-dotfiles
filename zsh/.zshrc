@@ -14,7 +14,10 @@ source $ZSH/oh-my-zsh.sh
 # Exports
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects
-export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export LLVM_CONFIG=/usr/bin/llvm-config-3.9
 
 # General aliases
 alias tmy="tmux attach -t gio || tmux new -s gio"
@@ -23,7 +26,7 @@ alias ..="cd .."
 alias up="cd .."
 alias c="clear"
 alias updateme="sudo apt update; sudo apt upgrade"
-alias nanna="sudo pm-suspend"
+alias nanna="systemctl suspend"
 
 # Utilities
 alias poffy="$HOME/tools/spotifycli/sp.sh"
@@ -38,6 +41,7 @@ alias copy="xsel -ib"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
 # Cuda stuff
-export PATH=/usr/local/cuda-9.0/bin${PATH:+${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}:+${LD_LIBRARY_PATH}
+# export PATH=/usr/local/cuda-9.0/bin${PATH:+${PATH}}
+# export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}:+${LD_LIBRARY_PATH}
