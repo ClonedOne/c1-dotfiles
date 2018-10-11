@@ -16,6 +16,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:~/tools/npm_global
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export LLVM_CONFIG=/usr/bin/llvm-config-3.9
 
