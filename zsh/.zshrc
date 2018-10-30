@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 export PATH="$HOME/.local/bin:$PATH"
 
-ZSH_THEME="refined"
+ZSH_THEME="spaceship"
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 

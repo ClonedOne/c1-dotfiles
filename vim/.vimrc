@@ -160,14 +160,14 @@ highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
 " resize current split by +/- 5 
-nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
-nnoremap <silent> ù :exe "vertical resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> à :exe "vertical resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> + :exe "resize +5"<CR>
+nnoremap <silent> - :exe "resize -5"<CR>
+nnoremap <silent> ] :exe "vertical resize +5"<CR>
+nnoremap <silent> [ :exe "vertical resize -5"<CR>
 
 " avoiding escape
 :imap jk <Esc>
-:imap ii <Esc>
+:imap kj <Esc>
 
 " source the regex file
 source ~/.regexlist.vim
