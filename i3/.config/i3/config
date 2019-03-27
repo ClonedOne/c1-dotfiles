@@ -151,12 +151,16 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec --no-startup-id feh --bg-scale ~/Pictures/walls/gradient.png
+exec --no-startup-id feh --bg-scale ~/Pictures/walls/grad.png
+
+
+exec --no-startup-id $HOME/.screenlayout/display_layout.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3blocks
+        tray_output primary
 
 }
 # exec_always --no-startup-id ~/.config/i3/bar.sh &
@@ -183,7 +187,7 @@ bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 bindsym Mod1+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
 
 # Lock screen
-bindsym Control+$mod+l exec i3lock
+bindsym Control+$mod+l exec i3lock -c 000000
 
 # Start Dropbox
 # exec --no-startup-id dropbox start

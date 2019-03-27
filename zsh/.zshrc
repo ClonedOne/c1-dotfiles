@@ -1,5 +1,6 @@
 export ZSH=$HOME/.oh-my-zsh
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/tools/npm_global/bin:$PATH"
 
 ZSH_THEME="spaceship"
 

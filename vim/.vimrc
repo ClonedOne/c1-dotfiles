@@ -93,6 +93,9 @@
     " allow access to virtualenv packages
     Plugin 'jmcantrell/vim-virtualenv'
 
+    " support rust autocomplete with racer
+    " Plugin 'racer-rust/vim-racer'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -167,7 +170,6 @@ nnoremap <silent> [ :exe "vertical resize -5"<CR>
 
 " avoiding escape
 :imap jk <Esc>
-:imap kj <Esc>
 
 " source the regex file
 source ~/.regexlist.vim
