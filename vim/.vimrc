@@ -212,3 +212,5 @@ au BufRead,BufNewFile *.md setlocal textwidth=80
 " Remove trailing spaces on save
 autocmd FileType c,cpp,java,php,python,javascript,sh autocmd BufWritePre <buffer> %s/\s\+$//e
 
+" Pretty print json files
+command PrettyJSON execute %!python -m json.tool
