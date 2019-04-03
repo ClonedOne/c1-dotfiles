@@ -213,4 +213,4 @@ au BufRead,BufNewFile *.md setlocal textwidth=80
 autocmd FileType c,cpp,java,php,python,javascript,sh autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " Pretty print json files
-command PrettyJSON execute %!python -m json.tool
+command PrettyJSON execute "%!python -m json.tool"
