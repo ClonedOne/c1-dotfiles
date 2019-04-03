@@ -141,7 +141,7 @@ filetype plugin indent on
 set expandtab
 
 " code folding management
-set foldmethod=indent   
+set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
@@ -162,7 +162,7 @@ set number
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
-" resize current split by +/- 5 
+" resize current split by +/- 5
 nnoremap <silent> + :exe "resize +5"<CR>
 nnoremap <silent> - :exe "resize -5"<CR>
 nnoremap <silent> ] :exe "vertical resize +5"<CR>
@@ -174,7 +174,7 @@ nnoremap <silent> [ :exe "vertical resize -5"<CR>
 " source the regex file
 source ~/.regexlist.vim
 
-" prettify json 
+" prettify json
 command! FormatJSON %!python -m json.tool
 
 " generic stuff
@@ -208,4 +208,7 @@ nnoremap k gk
 
 " Auto-text wrap at 80 chars
 au BufRead,BufNewFile *.md setlocal textwidth=80
+
+" Remove trailing spaces on save
+autocmd FileType c,cpp,java,php,python,javascript,sh autocmd BufWritePre <buffer> %s/\s\+$//e
 
