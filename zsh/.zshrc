@@ -8,7 +8,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 REPORTTIME=1
 
-plugins=(git virtualenvwrapper z catimg jsontools taskwarrior sudo zsh-syntax-highlighting)
+plugins=(git virtualenvwrapper z catimg jsontools taskwarrior sudo zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -42,7 +42,6 @@ alias copy="xsel -ib"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 
 # Cuda stuff
 # export PATH=/usr/local/cuda-9.0/bin${PATH:+${PATH}}
