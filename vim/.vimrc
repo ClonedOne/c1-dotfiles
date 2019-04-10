@@ -101,6 +101,12 @@ if executable('ag')
 endif
 nnoremap <Leader>a :Ack!<Space>
 
+" Jupyter notebooks and vim!
+Plugin 'szymonmaszke/vimpyter'
+autocmd Filetype ipynb nmap <silent><Leader>b :VimpyterInsertPythonBlock<CR>
+autocmd Filetype ipynb nmap <silent><Leader>j :VimpyterStartJupyter<CR>
+autocmd Filetype ipynb nmap <silent><Leader>n :VimpyterStartNteract<CR>
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
