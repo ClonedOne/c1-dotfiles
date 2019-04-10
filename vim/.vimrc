@@ -139,7 +139,6 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
-
 "Change split screen default movement
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -149,9 +148,6 @@ nnoremap <C-H> <C-W><C-H>
 " Set natural position for splits
 set splitbelow
 set splitright
-
-" Visual improvements
-set number
 
 " Highlight the 80th char of column
 highlight ColorColumn ctermbg=magenta
@@ -175,6 +171,8 @@ command! FormatJSON %!python -m json.tool
 " generic stuff
 set hidden        " buffer file instead of closing them
 
+set relativenumber " show relative line numbers
+
 set expandtab    " On pressing tab, insert 4 spaces
 set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
@@ -182,7 +180,6 @@ set backspace=indent,eol,start
 " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
-set number        " always show line numbers
 set shiftwidth=4  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
@@ -207,6 +204,3 @@ au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Remove trailing spaces on save
 autocmd FileType c,cpp,java,php,python,javascript,sh autocmd BufWritePre <buffer> %s/\s\+$//e
-
-" Pretty print json files
-command PrettyJSON execute "%!python -m json.tool"
