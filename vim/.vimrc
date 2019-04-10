@@ -156,8 +156,8 @@ call matchadd('ColorColumn', '\%80v', 100)
 " resize current split by +/- 5
 nnoremap <silent> + :exe "resize +5"<CR>
 nnoremap <silent> - :exe "resize -5"<CR>
-nnoremap <silent> ] :exe "vertical resize +5"<CR>
-nnoremap <silent> [ :exe "vertical resize -5"<CR>
+nnoremap <silent> <leader>] :exe "vertical resize +5"<CR>
+nnoremap <silent> <leader>[ :exe "vertical resize -5"<CR>
 
 " avoiding escape
 :imap jk <Esc>
