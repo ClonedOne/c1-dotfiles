@@ -93,6 +93,13 @@ Plugin 'joshdick/onedark.vim'
 " allow access to virtualenv packages
 Plugin 'jmcantrell/vim-virtualenv'
 
+" search in project
+Plugin 'mileszs/ack.vim'
+cnoreabbrev Ack Ack!
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+nnoremap <Leader>a :Ack!<Space>
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
