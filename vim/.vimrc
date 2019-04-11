@@ -81,9 +81,6 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
 
-" GDB debugger front end
-Plugin 'vim-scripts/Conque-GDB'
-
 " vim Airline
 Plugin 'vim-airline/vim-airline'
 
@@ -100,12 +97,6 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 nnoremap <Leader>a :Ack!<Space>
-
-" Jupyter notebooks and vim!
-Plugin 'szymonmaszke/vimpyter'
-autocmd Filetype ipynb nmap <silent><Leader>b :VimpyterInsertPythonBlock<CR>
-autocmd Filetype ipynb nmap <silent><Leader>j :VimpyterStartJupyter<CR>
-autocmd Filetype ipynb nmap <silent><Leader>n :VimpyterStartNteract<CR>
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -174,9 +165,6 @@ nnoremap <silent> <leader>[ :exe "vertical resize -5"<CR>
 
 " avoiding escape
 :imap jk <Esc>
-
-" source the regex file
-source ~/.regexlist.vim
 
 " prettify json
 command! FormatJSON %!python -m json.tool
