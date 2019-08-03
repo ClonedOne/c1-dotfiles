@@ -29,7 +29,6 @@ alias c="clear"
 alias ra="ranger"
 alias copy="xsel -ib"
 alias l="ls -ahl"
-alias ll="lsd -al"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
