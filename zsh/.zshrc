@@ -40,6 +40,7 @@ alias fmusic="firefox http://focusmusic.fm/"
 alias copy="xsel -ib"
 alias l="ls -ahl"
 alias ll="lsd -al"
+alias upnotes="git -C ~/Documents/notes commit -am 'updating notes'; git -C ~/Documents/notes push"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
