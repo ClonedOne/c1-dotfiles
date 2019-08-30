@@ -41,6 +41,7 @@ alias copy="xsel -ib"
 alias l="ls -ahl"
 alias ll="lsd -al"
 alias upnotes="git -C ~/Documents/notes commit -am 'updating notes'; git -C ~/Documents/notes push"
+alias dwnotes="git -C ~/Documents/notes pull"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
