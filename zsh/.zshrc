@@ -29,7 +29,7 @@ alias tmy="tmux attach -t gio || tmux new -s gio"
 alias tmd="tmux detach"
 alias ..="cd .."
 alias up="cd .."
-alias c="clear"
+alias clear="printf '\33[H\33[2J'"
 alias updateme="sudo apt update; sudo apt upgrade"
 alias nanna="systemctl suspend"
 
