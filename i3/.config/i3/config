@@ -188,6 +188,9 @@ bar {
 # Run Redshift at startup
 exec --no-startup-id redshift-gtk
 
+# run xbindkeys -p at startup to avoid mid click copy paste
+exec --no-startup-id xbindkeys -p
+
 # Gaps stuff
 # gaps inner 15
 # gaps outer 0
