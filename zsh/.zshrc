@@ -43,6 +43,8 @@ alias ll="lsd -al"
 alias fd="fdfind"
 alias upnotes="git -C ~/Documents/notes commit -am 'updating notes'; git -C ~/Documents/notes push"
 alias dwnotes="git -C ~/Documents/notes pull"
+alias calw="gcalcli calw"
+alias age="gcalcli agenda"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
