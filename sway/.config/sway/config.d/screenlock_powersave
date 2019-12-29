@@ -1,0 +1,13 @@
+# SwayWM idle/lock configuration. For detailed information type "man sway-idle"
+# Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
+
+# Example configuration:
+#
+exec swayidle -w \
+    timeout 600 'swaylock -f -i $lockscreenbg' \
+    timeout 900 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f -c 000000'
+
+# Lock the screen
+bindsym Control+$mod+l exec "swaylock -f -c 000000"

@@ -1,0 +1,50 @@
+set $mod Mod4
+
+# Your preferred terminal emulator
+set $term terminator
+
+# Your preferred application launcher
+set $menu rofi -terminal terminator -theme ~/.config/sway/rofi/flat-orange.rasi -show run
+
+# Default wallpaper
+set $wallpaper ~/Pictures/walls/wall.jpg
+output * bg $wallpaper fill
+
+# Remove all borders from applications
+default_border none
+
+# Stablish gaps between windows and from the screen edge
+#gaps inner 5
+#gaps outer 1
+
+# start a terminal
+bindsym $mod+Return exec gnome-terminal
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Start your launcher
+# bindsym $mod+d   exec "rofi -show run -show-icons"
+bindsym $mod+d   exec "rofi -show drun"
+bindsym $mod+Tab exec "rofi -show window -show-icons"
+
+# GAPS stuff
+gaps inner 10
+gaps outer 10
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+
+# Reload the configuration file. Be aware that some changes might need
+# a session logout (gaps, for example)
+bindsym $mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit'
+
+include ~/.config/sway/config.d/*

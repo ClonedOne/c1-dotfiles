@@ -1,0 +1,18 @@
+# SwayWM status bar configuration. For detailed information type "man sway-bar"
+# Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
+
+bar {
+    status_command while ~/.config/sway/scripts/sway_bar.sh; do sleep 5; done
+
+    colors {
+        background #282C34
+        statusline #ABB2BF
+        separator  #4B5263
+
+        focused_workspace  #282C34 #282C34 #C678DD
+        active_workspace   #282C34 #282C34 #ABB2BF
+        inactive_workspace #282C34 #282C34 #ABB2BF
+        urgent_workspace   #282C34 #BE5046 #ABB2BF
+        binding_mode       #282C34 #BE5046 #ABB2BF
+    }
+}

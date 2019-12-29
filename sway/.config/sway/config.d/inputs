@@ -1,0 +1,7 @@
+# Thinkpad X1
+input "2:7:SynPS/2_Synaptics_TouchPad" {
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
+

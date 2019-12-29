@@ -1,0 +1,26 @@
+# SwayWM multimedia keys configuration. For detailed information type "man sway"
+# Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
+
+# Audio
+#bindsym $mod+F1 exec pactl set-sink-mute `pactl list sinks short | grep RUNNING | awk '{print $1}'` toggle
+#bindsym $mod+F2 exec pactl set-sink-volume `pactl list sinks short | grep RUNNING | awk '{print $1}'` -2%
+#bindsym $mod+F3 exec pactl set-sink-volume `pactl list sinks short | grep RUNNING | awk '{print $1}'` +2%
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Media
+bindsym $mod+F4 exec playerctl previous
+bindsym $mod+F5 exec playerctl play-pause
+bindsym $mod+F6 exec playerctl next
+
+# Sreen brightness controls
+# bindsym $mod+F9 exec light -U 5
+# bindsym $mod+F10 exec light -A 5
+
+bindsym XF86MonBrightnessUp exec brightnessctl  set +2% # increase screen brightness
+bindsym XF86MonBrightnessDown exec brightnessctl  set 2%- # decrease screen brightness
+
+# Screenshot
+bindsym $mod+Shift+S exec grim ~/Pictures/$(date '+%Y-%m-%d-%T')-screenshot.png
