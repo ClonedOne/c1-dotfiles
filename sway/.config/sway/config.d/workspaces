@@ -1,5 +1,9 @@
 # WORKSPACES config
 
+for_window [app_id="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 5
+smart_borders on
+
 # class                 border  backgr. text    indicator child_border
 client.focused          #3ef99f #285577 #ffffff #3ef99f   #3ef99f
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
