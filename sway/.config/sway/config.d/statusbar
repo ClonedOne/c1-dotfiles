@@ -2,7 +2,8 @@
 # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
 
 bar {
-    status_command while ~/.config/sway/scripts/sway_bar.sh; do sleep 5; done
+    # status_command while ~/.config/sway/scripts/sway_bar.sh; do sleep 5; done
+    swaybar_command waybar
 
     colors {
         background #282C34

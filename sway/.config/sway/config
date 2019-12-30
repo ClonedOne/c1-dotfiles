@@ -48,3 +48,5 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit'
 
 include ~/.config/sway/config.d/*
+
+exec dropbox start
