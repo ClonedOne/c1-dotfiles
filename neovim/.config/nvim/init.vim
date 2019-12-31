@@ -3,35 +3,24 @@ filetype off                  " required
 
 " set mouse mode
 set mouse=a
-if has("mouse_sgr")
-    set ttymouse=sgr
-else
-    set ttymouse=xterm2
-end
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
 " auto complete plugin
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-" Plugin 'Valloric/YouCompleteMe'
-" nnoremap <C-c>g :YcmCompleter GoTo<CR>
-" nnoremap <C-c>gd :YcmCompleter GoToDeclaration<CR>
-" nnoremap <C-c>t :YcmCompleter GetType<CR>
-" nnoremap <C-c>d :YcmCompleter GetDoc<CR>
-" nnoremap <C-c>fi :YcmCompleter FixIt<CR>
-
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Show documentation in echo area
+Plug 'shougo/echodoc.vim'
+let g:echodoc_enable_at_startup = 1
 
 " nerd tree plugin for directory navigation
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
 
 " fuzzy file finder
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 " set ctrl-p working dir
 let g:ctrlp_working_path_mode = 'ra'
 " remap to ctrl-p
@@ -46,7 +35,7 @@ let g:ctrlp_custom_ignore = {
             \ }
 
 " nerd commenter plugin for toggle comment function
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
@@ -62,48 +51,34 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-" vim-surround plugin to allow quick modification of parenthesis and quotes
-Plugin 'tpope/vim-surround'
 
 " plugin for LaTex support
-Plugin 'lervag/vimtex'
+Plug 'lervag/vimtex'
 " use Zathura for visualization
 let g:vimtex_view_method = 'zathura'
 let g:latex_view_general_viewer = 'zathura'
 let g:tex_flavor = 'latex'
 
-" vim-fugitive plugin to handle git version control
-" Plugin 'tpope/vim-fugitive'
-
-" plugins for tag files management
-" Plugin 'ludovicchabant/vim-gutentags'
-
-" tag bar for code navigation
-" Plugin 'majutsushi/tagbar'
-" nmap <F8> :TagbarToggle<CR>
 
 " vim Airline
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 let g:airline_theme='onedark'
 
 " colooaaarrzzzzz
-Plugin 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim'
 
 " allow access to virtualenv packages
-Plugin 'jmcantrell/vim-virtualenv'
+Plug 'jmcantrell/vim-virtualenv'
 
 " search in project
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 cnoreabbrev Ack Ack!
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 nnoremap <Leader>a :Ack!<Space>
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
+call plug#end()
 
 " Non-Plugin stuff after this line
 syntax on
