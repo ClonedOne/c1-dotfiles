@@ -50,4 +50,6 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway
 
 include ~/.config/sway/config.d/*
 
+exec nm-applet
+exec blueman-applet
 exec dropbox start
