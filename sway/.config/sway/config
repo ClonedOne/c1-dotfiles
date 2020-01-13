@@ -53,3 +53,33 @@ include ~/.config/sway/config.d/*
 exec nm-applet
 exec blueman-applet
 exec dropbox start
+
+# Display management
+output HDMI-A-1 scale 1.5
+
+# switch off laptop screen on lid close
+set $laptop eDP-1
+bindswitch lid:on output $laptop disable
+bindswitch lid:off output $laptop enable
+
+# Screen modes.
+# Note mirroring is not yet properly supported by sway :(
+set $out_main eDP-1
+set $out_aux HDMI-A-1
+set $native_width 1920
+set $mode_display AUX: (l)eft / (r)ight / (m)irror / (o)ff
+mode "$mode_display" {
+    bindsym l output $out_aux enable, output $out_main pos 0 0, output $out_aux pos -$native_width 0, mode "default"
+    bindsym r output $out_aux enable, output $out_main pos 0 0, output $out_aux pos $native_width 0, mode "default"
+    bindsym m output $out_aux enable, output $out_main pos 0 0, output $out_aux pos 0 0, mode "default"
+    bindsym o output $out_aux disable, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+m mode "$mode_display"
+
+# move aux screen to the right as default
+output $out_main pos 0 0
+output $out_aux pos $native_width 0
