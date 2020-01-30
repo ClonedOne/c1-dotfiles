@@ -57,10 +57,14 @@ exec dropbox start
 # Display management
 output HDMI-A-1 scale 1.5
 
-# switch off laptop screen on lid close
+# Switch off laptop screen on lid close
 set $laptop eDP-1
 bindswitch lid:on output $laptop disable
 bindswitch lid:off output $laptop enable
+
+# Set keys to force switch
+bindsym $mod+Shift+i output $laptop enable
+bindsym $mod+Shift+o output $laptop disable
 
 # Screen modes.
 # Note mirroring is not yet properly supported by sway :(

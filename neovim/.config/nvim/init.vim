@@ -54,6 +54,7 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " plugin for LaTex support
 Plug 'lervag/vimtex'
+let g:vimtex_compiler_progname = 'nvr'
 " use Zathura for visualization
 let g:vimtex_view_method = 'zathura'
 let g:latex_view_general_viewer = 'zathura'
@@ -122,8 +123,6 @@ command! FormatJSON %!python -m json.tool
 
 " generic stuff
 set hidden        " buffer file instead of closing them
-
-set relativenumber " show relative line numbers
 
 set expandtab    " On pressing tab, insert 4 spaces
 set nowrap        " don't wrap lines
@@ -287,4 +286,7 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-
+set number relativenumber " Turn line numbering on at startup
+" Toggle line numbers from none at all
+" to relative numbering with current line number
+noremap <F3> :set invnumber invrelativenumber<CR>
