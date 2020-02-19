@@ -59,8 +59,8 @@ output HDMI-A-1 scale 1.5
 
 # Switch off laptop screen on lid close
 set $laptop eDP-1
-bindswitch lid:on output $laptop disable
-bindswitch lid:off output $laptop enable
+# bindswitch lid:on output $laptop disable
+# bindswitch lid:off output $laptop enable
 
 # Set keys to force switch
 bindsym $mod+Shift+i output $laptop enable
