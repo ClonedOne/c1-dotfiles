@@ -55,7 +55,9 @@ exec blueman-applet
 exec dropbox start
 
 # Display management
-output HDMI-A-1 scale 1.5
+# output HDMI-A-1 scale 1.5
+output DP-3 pos 0 0 scale 1.5
+output DP-4 transform 270
 
 # Switch off laptop screen on lid close
 set $laptop eDP-1
