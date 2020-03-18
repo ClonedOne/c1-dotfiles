@@ -1,1 +1,2 @@
 PATH DEFAULT=${PATH}:/snap/bin
+PATH DEFAULT=${PATH}:/home/gio/.local/bin

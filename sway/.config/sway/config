@@ -30,6 +30,7 @@ bindsym $mod+d   exec "rofi -show drun"
 bindsym $mod+Tab exec "rofi -show window -show-icons"
 
 # GAPS stuff
+smart_gaps on
 gaps inner 10
 gaps outer 10
 
@@ -50,13 +51,16 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway
 
 include ~/.config/sway/config.d/*
 
-exec nm-applet
+# Start applications
+# exec nm-applet
 exec blueman-applet
 exec dropbox start
+exec redshift -m wayland
+exec mako --default-timeout 5000
 
 # Display management
 # output HDMI-A-1 scale 1.5
-output DP-3 pos 0 0 scale 1.5
+output DP-3 pos 0 0 scale 1.25
 output DP-4 transform 270
 
 # Switch off laptop screen on lid close
@@ -70,22 +74,22 @@ bindsym $mod+Shift+o output $laptop disable
 
 # Screen modes.
 # Note mirroring is not yet properly supported by sway :(
-set $out_main eDP-1
-set $out_aux HDMI-A-1
-set $native_width 1920
-set $mode_display AUX: (l)eft / (r)ight / (m)irror / (o)ff
-mode "$mode_display" {
-    bindsym l output $out_aux enable, output $out_main pos 0 0, output $out_aux pos -$native_width 0, mode "default"
-    bindsym r output $out_aux enable, output $out_main pos 0 0, output $out_aux pos $native_width 0, mode "default"
-    bindsym m output $out_aux enable, output $out_main pos 0 0, output $out_aux pos 0 0, mode "default"
-    bindsym o output $out_aux disable, mode "default"
+#set $out_main eDP-1
+#set $out_aux HDMI-A-1
+#set $native_width 1920
+#set $mode_display AUX: (l)eft / (r)ight / (m)irror / (o)ff
+#mode "$mode_display" {
+#    bindsym l output $out_aux enable, output $out_main pos 0 0, output $out_aux pos -$native_width 0, mode "default"
+#    bindsym r output $out_aux enable, output $out_main pos 0 0, output $out_aux pos $native_width 0, mode "default"
+#    bindsym m output $out_aux enable, output $out_main pos 0 0, output $out_aux pos 0 0, mode "default"
+#    bindsym o output $out_aux disable, mode "default"
 
     # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+m mode "$mode_display"
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#}
+#bindsym $mod+m mode "$mode_display"
 
 # move aux screen to the right as default
-output $out_main pos 0 0
-output $out_aux pos $native_width 0
+#output $out_main pos 0 0
+#output $out_aux pos $native_width 0

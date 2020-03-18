@@ -63,10 +63,11 @@ let g:tex_flavor = 'latex'
 
 " vim Airline
 Plug 'vim-airline/vim-airline'
-let g:airline_theme='onedark'
 
 " colooaaarrzzzzz
-Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/onedark.vim'
+Plug 'sainnhe/edge'
+Plug 'artanikin/vim-synthwave84'
 
 " allow access to virtualenv packages
 Plug 'jmcantrell/vim-virtualenv'
@@ -88,7 +89,14 @@ autocmd FileType latex,tex,md,markdown setlocal spell
 vnoremap . :norm.<cr>
 
 " colooooooorz
-colorscheme onedark
+" Necessary for neon theme
+set termguicolors
+" set background=dark
+" let g:edge_style = 'neon'
+" let g:edge_disable_italic_comment = 1
+" colorscheme edge
+colorscheme synthwave84
+let g:airline_theme = 'edge'
 
 " code folding management
 set foldmethod=indent

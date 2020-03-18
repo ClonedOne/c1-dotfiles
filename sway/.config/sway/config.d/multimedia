@@ -1,14 +1,8 @@
-# SwayWM multimedia keys configuration. For detailed information type "man sway"
-# Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
-
 # Audio
-#bindsym $mod+F1 exec pactl set-sink-mute `pactl list sinks short | grep RUNNING | awk '{print $1}'` toggle
-#bindsym $mod+F2 exec pactl set-sink-volume `pactl list sinks short | grep RUNNING | awk '{print $1}'` -2%
-#bindsym $mod+F3 exec pactl set-sink-volume `pactl list sinks short | grep RUNNING | awk '{print $1}'` +2%
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Media
 bindsym $mod+F4 exec playerctl previous
