@@ -36,20 +36,8 @@ alias nanna="systemctl suspend"
 
 # Utilities
 alias ra="ranger"
-alias pomodoro="sleep 25m && mplayer ~/Music/pomodoro.mp3"
-alias fmusic="firefox http://focusmusic.fm/"
 alias copy="xsel -ib"
 alias l="ls -ahl"
-alias ll="lsd -al"
-alias fd="fdfind"
-alias upnotes="git -C ~/Documents/notes commit -am 'updating notes'; git -C ~/Documents/notes push"
-alias dwnotes="git -C ~/Documents/notes pull"
-alias calw="gcalcli calw"
-alias age="gcalcli agenda"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Cuda stuff
-# export PATH=/usr/local/cuda-9.0/bin${PATH:+${PATH}}
-# export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}:+${LD_LIBRARY_PATH}
