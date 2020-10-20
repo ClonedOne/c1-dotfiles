@@ -14,4 +14,4 @@ set render-loading-fg "#839496"
 set render-loading-bg "#002b36"
 
 set selection-clipboard clipboard
-
+set synctex true

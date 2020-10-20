@@ -57,7 +57,6 @@ Plug 'lervag/vimtex'
 let g:vimtex_compiler_progname = 'nvr'
 " use Zathura for visualization
 let g:vimtex_view_method = 'zathura'
-let g:latex_view_general_viewer = 'zathura'
 let g:tex_flavor = 'latex'
 
 
@@ -79,6 +78,9 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 nnoremap <Leader>a :Ack!<Space>
+
+" Make nerdtree look good
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 

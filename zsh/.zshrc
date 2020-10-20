@@ -15,6 +15,7 @@ source $ZSH/oh-my-zsh.sh
 # Exports
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects
+# Go language
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 # Virtualenvwrapper
