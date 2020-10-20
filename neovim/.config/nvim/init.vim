@@ -11,28 +11,12 @@ call plug#begin('~/.vim/plugged')
 
 " auto complete plugin
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Show documentation in echo area
-Plug 'shougo/echodoc.vim'
-let g:echodoc_enable_at_startup = 1
 
 " nerd tree plugin for directory navigation
 Plug 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
-
-" fuzzy file finder
-Plug 'ctrlpvim/ctrlp.vim'
-" set ctrl-p working dir
-let g:ctrlp_working_path_mode = 'ra'
-" remap to ctrl-p
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-" ignore file and dirs
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-            \ 'file': '\v\.(exe|so|dll)$',
-            \ }
+" Make nerdtree look good
+Plug 'ryanoasis/vim-devicons'
 
 " nerd commenter plugin for toggle comment function
 Plug 'scrooloose/nerdcommenter'
@@ -51,7 +35,6 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-
 " plugin for LaTex support
 Plug 'lervag/vimtex'
 let g:vimtex_compiler_progname = 'nvr'
@@ -59,28 +42,22 @@ let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_method = 'zathura'
 let g:tex_flavor = 'latex'
 
-
+" Themes for vim airline
+Plug 'vim-airline/vim-airline-themes'
 " vim Airline
 Plug 'vim-airline/vim-airline'
+let g:airline_theme='night_owl'
+let g:airline_powerline_fonts = 1
 
 " colooaaarrzzzzz
-" Plug 'joshdick/onedark.vim'
-Plug 'sainnhe/edge'
 Plug 'artanikin/vim-synthwave84'
 
 " allow access to virtualenv packages
 Plug 'jmcantrell/vim-virtualenv'
 
-" search in project
-Plug 'mileszs/ack.vim'
-cnoreabbrev Ack Ack!
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-nnoremap <Leader>a :Ack!<Space>
-
-" Make nerdtree look good
-Plug 'ryanoasis/vim-devicons'
+" FZF fuzzy finder support - also ripgrep support
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -98,7 +75,7 @@ set termguicolors
 " let g:edge_disable_italic_comment = 1
 " colorscheme edge
 colorscheme synthwave84
-let g:airline_theme = 'edge'
+" let g:airline_theme = 'edge'
 
 " code folding management
 set foldmethod=indent
@@ -168,7 +145,6 @@ autocmd FileType c,cpp,java,php,python,javascript,sh autocmd BufWritePre <buffer
 
 
 " COCVim settings
-
 
 " Some servers have issues with backup files, see #649
 set nobackup
