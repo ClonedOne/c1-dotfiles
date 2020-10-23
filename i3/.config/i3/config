@@ -210,7 +210,7 @@ bindsym $mod+Shift+i exec ~/tools/monitor_control/internal_screen.sh
 bindsym $mod+Shift+o exec ~/tools/monitor_control/external_monitor_isec.sh
 
 # Start Dropbox
-exec --no-startup-id dropbox startXF86Tools
+exec --no-startup-id dropbox start
 
 for_window [class="Yad"] floating enable
 
