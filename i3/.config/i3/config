@@ -186,6 +186,9 @@ bar {
 # Run Redshift at startup
 exec --no-startup-id redshift-gtk
 
+# Sleep manager
+exec --no-startup-id caffeine-indicator
+
 # run xbindkeys -p at startup to avoid mid click copy paste
 # exec --no-startup-id xbindkeys -p
 
