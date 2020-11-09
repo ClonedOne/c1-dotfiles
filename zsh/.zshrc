@@ -37,7 +37,8 @@ alias nanna="systemctl suspend"
 # Utilities
 alias ra="ranger"
 alias copy="xsel -ib"
-alias l="ls -ahl"
+alias l="ls -h"
+alias ll="ls -ahl"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
