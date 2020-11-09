@@ -40,5 +40,13 @@ alias copy="xsel -ib"
 alias l="ls -h"
 alias ll="ls -ahl"
 
+# Network/VPN
+alias achtung-up="sudo wg-quick up ~/Tools/wireguard/achtung.conf"
+alias achtung-down="sudo wg-quick down ~/Tools/wireguard/achtung.conf"
+alias mozus-up="sudo wg-quick up ~/mozwire/us101-wireguard.conf"
+alias mozus-down="sudo wg-quick down ~/mozwire/us101-wireguard.conf"
+alias mozit-up="sudo wg-quick up ~/mozwire/it5-wireguard.conf"
+alias mozit-down="sudo wg-quick down ~/mozwire/it5-wireguard.conf"
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
