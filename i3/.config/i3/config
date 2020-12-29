@@ -190,7 +190,7 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id caffeine-indicator
 
 # run xbindkeys -p at startup to avoid mid click copy paste
-# exec --no-startup-id xbindkeys -p
+exec --no-startup-id xbindkeys -p
 
 # Gaps stuff
 # gaps inner 15
@@ -243,3 +243,5 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 2 # decrease screen 
 # Handles multiple monitors
 bindsym XF86Display exec mons -O 2 --primary HDMI-1
 bindsym XF86Tools exec mons -O 0 --primary eDP-1
+bindsym XF86Favorites exec mons -e left --primary eDP-1
+
