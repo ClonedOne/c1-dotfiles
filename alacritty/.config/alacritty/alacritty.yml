@@ -28,9 +28,6 @@ scrolling:
   # Specifying '0' will disable scrolling.
   history: 20000
 
-  # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
-
 # Font configuration (changes require restart)
 font:
   # The normal (roman) font face to use.

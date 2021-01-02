@@ -1,52 +1,70 @@
-export ZSH=$HOME/.oh-my-zsh
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/tools/npm_global/bin:$PATH"
+# Zinit initialization
+source ~/.zinit/bin/zinit.zsh
 
-ZSH_THEME="spaceship"
+zinit light romkatv/powerlevel10k
 
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+zinit snippet OMZ::lib/completion.zsh
+zinit snippet OMZ::lib/history.zsh
+zinit snippet OMZ::lib/key-bindings.zsh
+zinit snippet OMZ::lib/theme-and-appearance.zsh
 
-REPORTTIME=1
+# Pyenv managemet
+zinit ice atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh && git clone https://github.com/pyenv/pyenv-virtualenv ./plugins/pyenv-virtualenv' \
+    atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
+    as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
+zinit light pyenv/pyenv
 
-plugins=(git virtualenvwrapper z catimg jsontools taskwarrior sudo zsh-autosuggestions zsh-syntax-highlighting)
+# Fzf 
+zinit pack for fzf
+zinit snippet https://github.com/junegunn/fzf/tree/master/shell/key-bindings.zsh
 
-source $ZSH/oh-my-zsh.sh
+# Various autocompletionsj
+zinit snippet https://github.com/bobthecow/git-flow-completion/tree/master/git-flow-completion.zsh
 
-# Exports
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/projects
-# Go language
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
-# Virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-# Rust
-export PATH="$HOME/.cargo/bin:$PATH"
-# Node npm
-export PATH=$PATH:~/tools/npm_global
+zinit ice blockf
+zinit light zsh-users/zsh-completions
+
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma/fast-syntax-highlighting
+
+# Addtional bindings
+bindkey '^ ' autosuggest-accept
+
+autoload -Uz compinit
+compinit
+
+zinit cdreplay -q
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # General aliases
-alias tmy="tmux attach -t gio || tmux new -s gio"
-alias tmd="tmux detach"
-alias ..="cd .."
-alias up="cd .."
-alias clear="printf '\33[H\33[2J'"
+alias ..='cd ..'
+alias clear='clear -x'
+alias l="ls -h"
+alias ll="ls -ahl"
 alias updateme="sudo apt update; sudo apt upgrade"
 alias nanna="systemctl suspend"
 
 # Utilities
+alias cdiff='colordiff -u'
 alias ra="ranger"
 alias copy="xsel -ib"
-alias l="ls -h"
-alias ll="ls -ahl"
+alias tmy="tmux attach -t gio || tmux new -s gio"
+alias tmd="tmux detach"
+alias vi="nvim"
 
 # Network/VPN
-alias achtung-up="sudo wg-quick up ~/Tools/wireguard/achtung.conf"
-alias achtung-down="sudo wg-quick down ~/Tools/wireguard/achtung.conf"
-alias mozus-up="sudo wg-quick up ~/mozwire/us101-wireguard.conf"
-alias mozus-down="sudo wg-quick down ~/mozwire/us101-wireguard.conf"
-alias mozit-up="sudo wg-quick up ~/mozwire/it5-wireguard.conf"
-alias mozit-down="sudo wg-quick down ~/mozwire/it5-wireguard.conf"
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias achtung-up="sudo wg-quick up ~/tools/wireguard/achtung.conf"
+alias achtung-down="sudo wg-quick down ~/tools/wireguard/achtung.conf"
+alias mozus-up="sudo wg-quick up ~/tools/mozwire/us101-wireguard.conf"
+alias mozus-down="sudo wg-quick down ~/tools/mozwire/us101-wireguard.conf"
+alias mozit-up="sudo wg-quick up ~/tools/mozwire/it5-wireguard.conf"
+alias mozit-down="sudo wg-quick down ~/tools/mozwire/it5-wireguard.conf"
