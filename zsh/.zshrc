@@ -14,25 +14,32 @@ zinit ice atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh && git c
     as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
 zinit light pyenv/pyenv
 
-# Fzf 
-zinit pack for fzf
-zinit snippet https://github.com/junegunn/fzf/tree/master/shell/key-bindings.zsh
-
-# Various autocompletionsj
+# Various autocompletions
 zinit snippet https://github.com/bobthecow/git-flow-completion/tree/master/git-flow-completion.zsh
-
 zinit ice blockf
 zinit light zsh-users/zsh-completions
 
+# Fzf 
+zinit snippet https://github.com/junegunn/fzf/tree/master/shell/key-bindings.zsh
+# fzf-tab needs to be loaded after compinit, but before plugins which will wrap widgets, such as zsh-autosuggestions or fast-syntax-highlighting.
+zinit light Aloxaf/fzf-tab
+zstyle ":completion:*:git-checkout:*" sort false
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+
+# Do not remove
+autoload -Uz compinit
+compinit
+
+# General plugins
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 
 # Addtional bindings
 bindkey '^ ' autosuggest-accept
 
-autoload -Uz compinit
-compinit
-
+# Do not remove
 zinit cdreplay -q
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
