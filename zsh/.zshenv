@@ -10,3 +10,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # rust language
 source "$HOME/.cargo/env"
+
+# Ruby gems
+export GEM_HOME="$HOME/.gems"
+export PATH="$PATH:$HOME/.gems/bin"
