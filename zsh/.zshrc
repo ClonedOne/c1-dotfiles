@@ -87,7 +87,7 @@ fi
 alias ..='cd ..'
 alias clear='clear -x'
 alias l="ls -h"
-alias ll="ls -ahl"
+alias ll="ls -Ahl"
 alias updateme="sudo apt update; sudo apt upgrade"
 alias nanna="systemctl suspend"
 
