@@ -21,10 +21,18 @@ antigen bundle agkozak/zsh-z
 antigen bundle Aloxaf/fzf-tab
 
 # Various autocompletions
+antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 bindkey '^ ' autosuggest-accept
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
+
+
+# Load oh-my-zsh library.
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle history
+antigen bundle command-not-found
 
 # Do not remove
 antigen apply
