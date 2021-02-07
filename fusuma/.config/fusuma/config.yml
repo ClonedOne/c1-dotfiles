@@ -14,9 +14,9 @@ swipe:
     right:
       command: 'xdotool key super+Left'
     up:
-      command: 'xdotool key super+control+j'
-    down:
       command: 'xdotool key super+control+k'
+    down:
+      command: 'xdotool key super+control+j'
 
 pinch:
   2:
