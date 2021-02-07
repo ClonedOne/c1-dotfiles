@@ -1,4 +1,8 @@
+# general local binaries
 export PATH="$HOME/.local/bin:$PATH"
+
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
 
 # node and npm
 export PATH=$PATH:~/tools/npm_global
@@ -11,6 +15,6 @@ export PATH=$PATH:$GOPATH/bin
 # rust language
 source "$HOME/.cargo/env"
 
-# Ruby gems
+# ruby gems
 export GEM_HOME="$HOME/.gems"
 export PATH="$PATH:$HOME/.gems/bin"

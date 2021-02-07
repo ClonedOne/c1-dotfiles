@@ -1,93 +1,43 @@
-# Zinit initialization
-# source ~/.zinit/bin/zinit.zsh
+# Source zsh-antigen installed with apt
+source $HOME/tools/antigen/bin/antigen.zsh
 
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
-
-source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zinit-zsh/z-a-rust \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-bin-gem-node
-
-### End of Zinit's installer chunk
-
-zinit light romkatv/powerlevel10k
-
-zinit snippet OMZ::lib/completion.zsh
-zinit snippet OMZ::lib/history.zsh
-zinit snippet OMZ::lib/key-bindings.zsh
-zinit snippet OMZ::lib/theme-and-appearance.zsh
-
-# Pyenv managemet
-zinit ice atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh && git clone https://github.com/pyenv/pyenv-virtualenv ./plugins/pyenv-virtualenv' \
-    atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
-    as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
-zinit light pyenv/pyenv
-eval "$(pyenv init -)"  
-eval "$(pyenv virtualenv-init -)"
-
-# Various autocompletions
-zinit snippet https://github.com/bobthecow/git-flow-completion/tree/master/git-flow-completion.zsh
-zinit ice blockf
-zinit light zsh-users/zsh-completions
-
-# Autocorrect errors
-zinit light laggardkernel/zsh-thefuck
-
-# Using z for navigation
-zinit load agkozak/zsh-z
-
-# Fzf 
-zinit snippet https://github.com/junegunn/fzf/tree/master/shell/key-bindings.zsh
-# fzf-tab needs to be loaded after compinit, but before plugins which will wrap widgets, such as zsh-autosuggestions or fast-syntax-highlighting.
-zinit light Aloxaf/fzf-tab
-zstyle ":completion:*:git-checkout:*" sort false
-zstyle ':completion:*:descriptions' format '[%d]'
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
-
-# Do not remove
-autoload -Uz compinit
-compinit
-
-# General plugins
-zinit light zsh-users/zsh-autosuggestions
-zinit light zdharma/fast-syntax-highlighting
-
-# Addtional bindings
-bindkey '^ ' autosuggest-accept
-
-# Do not remove
-zinit cdreplay -q
-
+# this is a fast theme
+antigen theme romkatv/powerlevel10k
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# navigation
+# source fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# use z to jump around
+antigen bundle agkozak/zsh-z
+# use fzf with tab completion
+antigen bundle Aloxaf/fzf-tab
+
+# Various autocompletions
+antigen bundle zsh-users/zsh-autosuggestions
+bindkey '^ ' autosuggest-accept
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+
+# Do not remove
+antigen apply
+
+# Pyenv managemet
+eval "$(pyenv init -)"  
+eval "$(pyenv virtualenv-init -)"
 
 # General aliases
 alias ..='cd ..'
 alias clear='clear -x'
-alias l="ls -h"
-alias ll="ls -Ahl"
+alias l="ls -h --color"
+alias ll="ls -Ahl --color"
 alias updateme="sudo apt update; sudo apt upgrade"
 alias nanna="systemctl suspend"
 
@@ -106,3 +56,4 @@ alias mozus-up="sudo wg-quick up ~/tools/mozwire/us101-wireguard.conf"
 alias mozus-down="sudo wg-quick down ~/tools/mozwire/us101-wireguard.conf"
 alias mozit-up="sudo wg-quick up ~/tools/mozwire/it5-wireguard.conf"
 alias mozit-down="sudo wg-quick down ~/tools/mozwire/it5-wireguard.conf"
+
