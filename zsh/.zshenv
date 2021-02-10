@@ -1,8 +1,8 @@
-# general local binaries
-export PATH="$HOME/.local/bin:$PATH"
-
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
+
+# general local binaries
+export PATH="$HOME/.local/bin:$PATH"
 
 # node and npm
 export PATH=$PATH:~/tools/npm_global

@@ -13,8 +13,6 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # navigation
-# source fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # use z to jump around
 antigen bundle agkozak/zsh-z
 # use fzf with tab completion
@@ -36,10 +34,6 @@ antigen bundle command-not-found
 
 # Do not remove
 antigen apply
-
-# Pyenv managemet
-eval "$(pyenv init -)"  
-eval "$(pyenv virtualenv-init -)"
 
 # General aliases
 alias ..='cd ..'
@@ -64,4 +58,12 @@ alias mozus-up="sudo wg-quick up ~/tools/mozwire/us101-wireguard.conf"
 alias mozus-down="sudo wg-quick down ~/tools/mozwire/us101-wireguard.conf"
 alias mozit-up="sudo wg-quick up ~/tools/mozwire/it5-wireguard.conf"
 alias mozit-down="sudo wg-quick down ~/tools/mozwire/it5-wireguard.conf"
+
+# source fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Pyenv managemet
+eval "$(pyenv init -)"  
+eval "$(pyenv virtualenv-init -)"
+
 
