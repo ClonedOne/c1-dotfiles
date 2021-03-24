@@ -55,6 +55,10 @@ Plug 'artanikin/vim-synthwave84'
 " allow access to virtualenv packages
 Plug 'jmcantrell/vim-virtualenv'
 
+" Generate code documentation
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+let g:doge_doc_standard_python = 'google'
+
 " FZF fuzzy finder support - also ripgrep support
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
