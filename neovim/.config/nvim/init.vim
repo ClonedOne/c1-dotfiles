@@ -12,13 +12,13 @@ call plug#begin('~/.vim/plugged')
 " auto complete plugin
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" nerd tree plugin for directory navigation
-Plug 'scrooloose/nerdtree'
+" nerd tree plugin for directory navigation 
+Plug 'scrooloose/nerdtree' 
 map <C-n> :NERDTreeToggle<CR>
 " Make nerdtree look good
 Plug 'ryanoasis/vim-devicons'
 
-" nerd commenter plugin for toggle comment function
+" nerd commenter plugin for toggle comment function 
 Plug 'scrooloose/nerdcommenter'
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -28,8 +28,6 @@ let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
 " Set a language to use its alternate delimiters by default
 let g:NERDAltDelims_java = 1
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
@@ -74,12 +72,7 @@ vnoremap . :norm.<cr>
 " colooooooorz
 " Necessary for neon theme
 set termguicolors
-" set background=dark
-" let g:edge_style = 'neon'
-" let g:edge_disable_italic_comment = 1
-" colorscheme edge
 colorscheme synthwave84
-" let g:airline_theme = 'edge'
 
 " code folding management
 set foldmethod=indent
@@ -118,10 +111,12 @@ set hidden        " buffer file instead of closing them
 set expandtab    " On pressing tab, insert 4 spaces
 set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
-set backspace=indent,eol,start
 " allow backspacing over everything in insert mode
+set backspace=indent,eol,start
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
+" copy directly to clipboard
+set clipboard=unnamedplus 
 set shiftwidth=4  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
@@ -280,3 +275,10 @@ set number relativenumber " Turn line numbering on at startup
 " Toggle line numbers from none at all
 " to relative numbering with current line number
 noremap <F3> :set invnumber invrelativenumber<CR>
+
+" Toggle file finder/buffers/search using fzf
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-b> :Buffers<CR>
+nnoremap <silent> <C-f> :Rg<CR>
+" This makes sure that ripgrep only searches inside the content of files
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%'), <bang>0)

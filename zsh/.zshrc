@@ -17,6 +17,10 @@ fi
 antigen bundle agkozak/zsh-z
 # use fzf with tab completion
 antigen bundle Aloxaf/fzf-tab
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi
 
 # Various autocompletions
 antigen bundle zsh-users/zsh-completions

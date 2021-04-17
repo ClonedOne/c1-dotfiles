@@ -18,3 +18,6 @@ source "$HOME/.cargo/env"
 # ruby gems
 export GEM_HOME="$HOME/.gems"
 export PATH="$PATH:$HOME/.gems/bin"
+
+# the-way snippet manager
+export THE_WAY_CONFIG="$HOME/.config/the-way/config.toml"
