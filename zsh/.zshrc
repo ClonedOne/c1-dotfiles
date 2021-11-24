@@ -1,5 +1,5 @@
 # Source zsh-antigen installed with apt
-source $HOME/tools/antigen/bin/antigen.zsh
+source $HOME/tools/antigen/antigen.zsh
 
 # this is a fast theme
 antigen theme romkatv/powerlevel10k
@@ -36,6 +36,9 @@ antigen bundle git
 antigen bundle history
 antigen bundle command-not-found
 
+# Conda
+antigen bundle esc/conda-zsh-completion
+
 # Do not remove
 antigen apply
 
@@ -54,6 +57,7 @@ alias copy="xsel -ib"
 alias tmy="tmux attach -t gio || tmux new -s gio"
 alias tmd="tmux detach"
 alias vi="nvim"
+alias code="flatpak run com.visualstudio.code"
 
 # Network/VPN
 alias achtung-up="sudo wg-quick up ~/tools/wireguard/achtung.conf"
@@ -66,8 +70,18 @@ alias mozit-down="sudo wg-quick down ~/tools/mozwire/it5-wireguard.conf"
 # source fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Pyenv managemet
-eval "$(pyenv init -)"  
-eval "$(pyenv virtualenv-init -)"
-
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/gio/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/gio/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/gio/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/gio/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 

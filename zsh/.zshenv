@@ -21,3 +21,4 @@ export PATH="$PATH:$HOME/.gems/bin"
 
 # the-way snippet manager
 export THE_WAY_CONFIG="$HOME/.config/the-way/config.toml"
+. "$HOME/.cargo/env"
