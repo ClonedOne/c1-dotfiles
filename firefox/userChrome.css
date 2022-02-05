@@ -1,0 +1,31 @@
+/* Remove the top tab bar and push the window buttons down into the address bar */
+
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
+  opacity: 0;
+  pointer-events: none;
+}
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+    visibility: collapse !important;
+}
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar .titlebar-spacer {
+        border-inline-end: none;
+}
+#titlebar {
+  appearance: none !important;
+  height: 0px;
+}
+
+#titlebar > #toolbar-menubar {
+  margin-top: 0px;
+}
+
+#TabsToolbar {
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+#TabsToolbar > .titlebar-buttonbox-container {
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 0px;
+}
